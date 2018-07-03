@@ -48,6 +48,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         table.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            items.remove(at: indexPath.row)
+            UserDefaults.standard.set(items, forKey: "items")
+            table.reloadData()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
