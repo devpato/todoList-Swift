@@ -11,7 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var task: UITextField!
-    var tasksList:[String] = []
+   
     
     
     override func viewDidLoad() {
@@ -28,6 +28,7 @@ class SecondViewController: UIViewController {
         
         let tasksListObj = UserDefaults.standard.object(forKey: "newTasksList")
        
+         var tasksList:[String] = []
         
         //if already added anything... always following check should work!
         if let tempTasks = tasksListObj as? String {
