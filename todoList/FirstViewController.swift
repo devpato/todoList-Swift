@@ -32,6 +32,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    //To call code when you switch tabs
+    override func viewDidAppear(_ animated: Bool) {
         let itemsObject = UserDefaults.standard.object(forKey: "items")
         
         
@@ -42,7 +47,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         table.reloadData()
-        
     }
 
     override func didReceiveMemoryWarning() {
