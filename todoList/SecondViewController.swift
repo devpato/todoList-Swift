@@ -10,34 +10,44 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet weak var itemField: UITextField!
+    @IBOutlet weak var task: UITextField!
+    var tasksList:[String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func addItem(_ sender: Any) {
-        let itemsObj = UserDefaults.standard.object(forKey: "items")
-        
-        var items: NSMutableArray = []
-        
-        if let itemsTemp = itemsObj as? NSMutableArray {
-            items = itemsTemp
-            items.addObjects(from: [itemField.text!])
-        } else {
-             items = [itemField.text!]
-        }
-        UserDefaults.standard.set(items,forKey: "items")
-        itemField.text = ""
-        
-        print(UserDefaults.standard.object(forKey:"itmes") ?? [])
-    }
    
+    @IBAction func addTaskNew(_ sender: UIButton) {
+        
+        let tasksListObj = UserDefaults.standard.object(forKey: "newTasksList")
+       
+        
+        //if already added anything... always following check should work!
+        if let tempTasks = tasksListObj as? String {
+            tasksList = [tempTasks]
+            tasksList.append(task.text!)
+        }
+        else
+        {
+            //this will run only first time
+            tasksList = [task.text!]
+        }
+        
+        
+        
+        //This sets value in app cookies.
+        UserDefaults.standard.set(tasksList, forKey: "newTasksList")
+        print(tasksListObj ?? [])
+        task.text = ""
+        
+     
+    }
 }
 
