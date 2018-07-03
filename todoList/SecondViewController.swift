@@ -25,12 +25,19 @@ class SecondViewController: UIViewController {
     @IBAction func addItem(_ sender: Any) {
         let itemsObj = UserDefaults.standard.object(forKey: "items")
         
-        if let items = itemsObj as? NSMutableArray {
-            items.addObjects(from: [itemField.text as Any])
+        var items: NSMutableArray = []
+        
+        if let itemsTemp = itemsObj as? NSMutableArray {
+            items = itemsTemp
+            items.addObjects(from: [itemField.text!])
         } else {
-            var items = [itemField.text]
+             items = [itemField.text!]
         }
+        UserDefaults.standard.set(items,forKey: "items")
+        itemField.text = ""
+        
+        print(UserDefaults.standard.object(forKey:"itmes") ?? [])
     }
-    
+   
 }
 
