@@ -54,6 +54,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        task.resignFirstResponder()
+        return true
+    }
+    
     
 }
 
