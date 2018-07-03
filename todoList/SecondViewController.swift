@@ -25,27 +25,26 @@ class SecondViewController: UIViewController {
     }
    
     @IBAction func addTaskNew(_ sender: UIButton) {
+        let itemsObject = UserDefaults.standard.object(forKey: "items")
         
-        let tasksListObj = UserDefaults.standard.object(forKey: "newTasksList")
-       
-         var tasksList:[String] = []
+        var items:[String]
         
-        //if already added anything... always following check should work!
-        if let tempTasks = tasksListObj as? String {
-            tasksList = [tempTasks]
-            tasksList.append(task.text!)
+        if let tempItems = itemsObject as? [String] {
+            
+            items = tempItems
+            
+            items.append(task.text!)
+            
+            print(items)
+            
+        } else {
+            
+            items = [task.text!]
+            
         }
-        else
-        {
-            //this will run only first time
-            tasksList = [task.text!]
-        }
         
+        UserDefaults.standard.set(items, forKey: "items")
         
-        
-        //This sets value in app cookies.
-        UserDefaults.standard.set(tasksList, forKey: "newTasksList")
-        print(tasksListObj ?? [])
         task.text = ""
         
      

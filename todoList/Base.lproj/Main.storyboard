@@ -61,6 +61,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="table" destination="yW3-vj-PwM" id="wc1-Oc-ldd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,9 +98,8 @@
                                     <action selector="addTaskNew:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="73F-Fw-ujL"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="25Z-q0-Gey">
-                                <rect key="frame" x="139" y="95" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="25Z-q0-Gey">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -105,8 +107,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="25Z-q0-Gey" firstAttribute="top" secondItem="Yzm-W6-sHx" secondAttribute="bottom" constant="20" id="5k9-Tn-sKp"/>
                             <constraint firstItem="Yzm-W6-sHx" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="35" id="EP7-a6-ggb"/>
                             <constraint firstItem="Yzm-W6-sHx" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Ijj-fY-MS4"/>
+                            <constraint firstItem="25Z-q0-Gey" firstAttribute="top" secondItem="Yzm-W6-sHx" secondAttribute="bottom" constant="20" id="MIn-e6-Kyo"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="25Z-q0-Gey" secondAttribute="trailing" constant="16" id="Tsa-SC-bl0"/>
+                            <constraint firstItem="25Z-q0-Gey" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="e2Y-0y-2Fy"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>

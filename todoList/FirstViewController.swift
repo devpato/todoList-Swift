@@ -9,15 +9,21 @@
 import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-     var tasksList:[String] = []
+    
+    var items: [String] = []
+    
+    @IBOutlet weak var table: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasksList.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = tasksList[indexPath.row]
+        
+        
+        cell.textLabel?.text = items[indexPath.row]
         
         return cell
     }
@@ -26,14 +32,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let tasksListObj = UserDefaults.standard.object(forKey: "newTasksList")
+        let itemsObject = UserDefaults.standard.object(forKey: "items")
         
         
-        //if already added anything... always following check should work!
-        if let tempTasks = tasksListObj as? String {
-            tasksList = [tempTasks]
+        if let tempItems = itemsObject as? [String] {
+            
+            items = tempItems
+            
         }
-
+        
+        table.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
