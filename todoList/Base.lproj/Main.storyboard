@@ -36,7 +36,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="riY-vV-ySP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="riY-vV-ySP">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="riY-vV-ySP" id="qHx-Lh-Isd">
@@ -90,9 +90,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCO-kL-X1H">
-                                <rect key="frame" x="172" y="133" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCO-kL-X1H">
+                                <rect key="frame" x="172" y="133" width="31" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addTaskNew:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="73F-Fw-ujL"/>
@@ -113,9 +112,12 @@
                             <constraint firstItem="25Z-q0-Gey" firstAttribute="top" secondItem="Yzm-W6-sHx" secondAttribute="bottom" constant="20" id="5k9-Tn-sKp"/>
                             <constraint firstItem="Yzm-W6-sHx" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="35" id="EP7-a6-ggb"/>
                             <constraint firstItem="Yzm-W6-sHx" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Ijj-fY-MS4"/>
+                            <constraint firstItem="zCO-kL-X1H" firstAttribute="top" secondItem="25Z-q0-Gey" secondAttribute="bottom" constant="7" id="Lh1-AF-CGg"/>
                             <constraint firstItem="25Z-q0-Gey" firstAttribute="top" secondItem="Yzm-W6-sHx" secondAttribute="bottom" constant="20" id="MIn-e6-Kyo"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="25Z-q0-Gey" secondAttribute="trailing" constant="16" id="Tsa-SC-bl0"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="zCO-kL-X1H" secondAttribute="trailing" constant="172" id="YcG-fJ-1fD"/>
                             <constraint firstItem="25Z-q0-Gey" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="e2Y-0y-2Fy"/>
+                            <constraint firstItem="zCO-kL-X1H" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="172" id="pCD-3T-ohZ"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
